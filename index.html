@@ -29,6 +29,8 @@
   plausible.init()
 </script>
 <script src="./support.js"></script>
+<link rel="stylesheet" href="assets/mobile.css">
+<script src="assets/mobile.js" defer></script>
 </head>
 <body>
 <x-dc>
@@ -75,15 +77,15 @@ input,textarea,select{font-size:16px!important}
 <div  style="background:#F1F3F2;color:#0C1620;line-height:1.55">
 
   <!-- HEADER -->
-  <header  data-m-unstick="" style="position:sticky;top:0;z-index:50;background:#F1F3F2;border-bottom:2px solid #0C1620">
+  <header data-site-nav="" data-m-unstick="" style="position:sticky;top:0;z-index:50;background:#F1F3F2;border-bottom:2px solid #0C1620">
     <div  style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px">
-      <a href="#top"  style="display:flex;align-items:center;gap:12px">
+      <a href="#top" data-wordmark="" aria-label="Before You Book That Surgery, home" style="display:flex;align-items:center;gap:12px">
         <span  style="width:26px;height:26px;border:2px solid #0C1620;position:relative;flex:0 0 auto">
           <span  style="position:absolute;left:50%;top:50%;width:10px;height:10px;border:2px solid {{accent}};border-radius:50%;transform:translate(-50%,-50%)"></span>
         </span>
-        <span  style="font-size:11px;letter-spacing:.14em;line-height:1.5;font-weight:700;text-transform:uppercase;font-family:'IBM Plex Mono',monospace;color:#0C1620">Before You Book<br/>That Surgery</span>
+        <span data-wm-full="" style="font-size:11px;letter-spacing:.14em;line-height:1.5;font-weight:700;text-transform:uppercase;font-family:'IBM Plex Mono',monospace;color:#0C1620">Before You Book<br/> That Surgery</span><span data-wm-short="" style="display:none;font-size:13px;letter-spacing:.14em;font-weight:700;font-family:'IBM Plex Mono',monospace;color:#0C1620">BYBTS</span>
       </a>
-      <nav  style="display:flex;gap:clamp(14px,2vw,28px);flex-wrap:wrap">
+      <nav id="site-menu" data-nav-links="" aria-label="Primary" style="display:flex;gap:clamp(14px,2vw,28px);flex-wrap:wrap">
         <a href="#pathway"  style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-family:'IBM Plex Mono',monospace;font-weight:600;color:#57646E" style-hover="color:#0C1620">Pathway</a>
         <a href="how-to-use.html"  style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-family:'IBM Plex Mono',monospace;font-weight:600;color:#57646E" style-hover="color:#0C1620">How to use</a>
         <a href="#tools"  style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-family:'IBM Plex Mono',monospace;font-weight:600;color:#57646E" style-hover="color:#0C1620">Tools</a>
@@ -93,6 +95,7 @@ input,textarea,select{font-size:16px!important}
         <a href="#call"  style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-family:'IBM Plex Mono',monospace;font-weight:600;color:#57646E" style-hover="color:#0C1620">The Permission Call</a>
       </nav>
       <a data-hcta="" href="light-map.html"  style="background:#0C1620;color:#F1F3F2;padding:14px 20px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-family:'IBM Plex Mono',monospace;font-weight:700;white-space:nowrap" style-hover="background:#0C1620">Open the Light Map</a>
+      <button type="button" data-nav-toggle="" aria-expanded="false" aria-controls="site-menu" style="display:none"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6h16M4 12h16M4 18h16"></path></svg><span data-nav-toggle-label="">Menu</span></button>
     </div>
   </header>
   <dc-import name="GuideRail" current="home" hint-size="100%,64px"></dc-import>
@@ -115,18 +118,18 @@ input,textarea,select{font-size:16px!important}
         </div>
         <p  style="border-top:2px solid #0C1620;padding-top:16px;margin-top:24px;max-width:52ch;font-size:13px;color:#57646E">A patient decision aid — designed to supplement, never replace, your clinical consultation. You are allowed to understand before you commit.</p>
       </div>
-      <div  style="border:2px solid #0C1620;background:#FCFDFD">
+      <div data-signal-log="" style="border:2px solid #0C1620;background:#FCFDFD">
         <div  style="display:flex;justify-content:space-between;padding:14px 18px;border-bottom:2px solid #0C1620;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-family:'IBM Plex Mono',monospace;font-weight:700;color:#57646E">
-          <span>Signal Log — Sample</span><span>Ref 000-A</span>
+          <span>Signal Log — Sample</span><span data-ref="">Ref 000-A</span>
         </div>
         <sc-for list="{{heroLog}}" as="row" hint-placeholder-count="6">
-          <div  style="display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:baseline;padding:13px 18px;border-bottom:1px solid #D3D8D6">
-            <span  style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-family:'IBM Plex Mono',monospace;color:#57646E;font-weight:600">{{row.k}}</span>
-            <span  style="font-size:14.5px;color:#0C1620">{{row.v}}</span>
-            <span  style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-family:'IBM Plex Mono',monospace;padding:4px 8px;border:1px solid #57646E;color:#57646E;white-space:nowrap">{{row.s}}</span>
+          <div data-sl-row="" style="display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:baseline;padding:13px 18px;border-bottom:1px solid #D3D8D6">
+            <span data-sl-k="" style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-family:'IBM Plex Mono',monospace;color:#57646E;font-weight:600">{{row.k}}</span>
+            <span data-sl-v="" style="font-size:14.5px;color:#0C1620">{{row.v}}</span>
+            <span data-sl-s="" style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-family:'IBM Plex Mono',monospace;padding:4px 8px;border:1px solid #57646E;color:#57646E;white-space:nowrap">{{row.s}}</span>
           </div>
         </sc-for>
-        <div  style="display:flex;justify-content:space-between;padding:12px 18px;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-family:'IBM Plex Mono',monospace;color:#57646E">
+        <div data-sl-foot="" style="display:flex;justify-content:space-between;padding:12px 18px;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-family:'IBM Plex Mono',monospace;color:#57646E">
           <span>6 signals logged</span><span>0 verified</span>
         </div>
       </div>
@@ -443,7 +446,7 @@ input,textarea,select{font-size:16px!important}
           <sc-for list="{{pqItems}}" as="q" hint-placeholder-count="3">
             <div style="padding:clamp(16px,2.6vw,24px);border-bottom:2px solid rgba(226,233,238,.2);display:grid;gap:12px">
               <span style="font-size:clamp(1rem,1.8vw,1.15rem);font-weight:700;line-height:1.35">{{q.n}} · {{q.q}}</span>
-              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:8px">
+              <div data-opts="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:8px">
                 <sc-for list="{{q.opts}}" as="o" hint-placeholder-count="3">
                   <button onClick="{{o.pick}}" aria-pressed="{{o.on}}" style="text-align:left;padding:14px 16px;min-height:52px;border:2px solid {{o.bd}};background:{{o.bg}};color:{{o.fg}};font-family:inherit;font-size:15px;font-weight:600;line-height:1.35;cursor:pointer;border-radius:0;transition:background .25s,border-color .25s">{{o.l}}</button>
                 </sc-for>

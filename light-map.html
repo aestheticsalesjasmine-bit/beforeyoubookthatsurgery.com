@@ -28,6 +28,8 @@
   plausible.init()
 </script>
 <script src="./support.js"></script>
+<link rel="stylesheet" href="assets/mobile.css">
+<script src="assets/mobile.js" defer></script>
 </head>
 <body>
 <x-dc>
@@ -83,25 +85,26 @@ input,textarea,select{font-size:16px!important}
   </nav>
   <dc-import name="GuideRail" current="map" hint-size="100%,64px"></dc-import>
 
-  <header  data-m-unstick="" style="position:sticky;top:0;z-index:10;background:var(--color-bg);border-bottom:2px solid var(--color-text)">
+  <header data-site-nav="" data-m-unstick="" style="position:sticky;top:0;z-index:10;background:var(--color-bg);border-bottom:2px solid var(--color-text)">
     <div  style="max-width:1320px;margin:0 auto;padding:0 clamp(16px,3vw,40px);display:flex;align-items:center;gap:20px;min-height:64px;flex-wrap:wrap">
-      <a href="#top"  style="display:flex;align-items:baseline;gap:10px;color:var(--color-text);text-decoration:none;flex-wrap:wrap">
-        <span  style="font-weight:900;font-size:17px;letter-spacing:-.02em">Before You Book That Surgery</span>
-        <span  style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700)">The Light Map</span>
+      <a href="#top" data-wordmark="" style="display:flex;align-items:baseline;gap:10px;color:var(--color-text);text-decoration:none;flex-wrap:wrap">
+        <span data-wm-full="" style="font-weight:900;font-size:17px;letter-spacing:-.02em">Before You Book That Surgery</span><span data-wm-short="" style="display:none;font-weight:900;font-size:17px;letter-spacing:-.02em">BYBTS</span>
+        <span data-wm-sub="" style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700)">The Light Map</span>
       </a>
-      <nav  style="display:flex;gap:18px;flex-wrap:wrap">
+      <nav id="site-menu" data-nav-links="" aria-label="On this page" style="display:flex;gap:18px;flex-wrap:wrap">
         <a href="#surgery"  style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-800);text-decoration:none;white-space:nowrap" style-hover="color:#127A6F">Surgery</a>
         <a href="#map"  style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-800);text-decoration:none;white-space:nowrap" style-hover="color:#127A6F">Records</a>
         <a href="#read"  style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-800);text-decoration:none;white-space:nowrap" style-hover="color:#127A6F">How to read</a>
         <a href="#chain"  style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-800);text-decoration:none;white-space:nowrap" style-hover="color:#127A6F">Sign-offs</a>
         <a href="#reading"  style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-800);text-decoration:none;white-space:nowrap" style-hover="color:#127A6F">Reading</a>
       </nav>
-      <div  style="margin-left:auto;display:flex;align-items:center;gap:0;border:2px solid var(--color-text);flex-shrink:0">
+      <div data-counts="" style="margin-left:auto;display:flex;align-items:center;gap:0;border:2px solid var(--color-text);flex-shrink:0">
         <span  style="padding:6px 10px;font-size:12px;font-weight:800;white-space:nowrap;border-right:2px solid var(--color-text)">{{ nKnown }} known</span>
         <span  style="padding:6px 10px;font-size:12px;font-weight:800;white-space:nowrap;border-right:2px solid var(--color-text)">{{ nKnowable }} knowable</span>
         <span  style="padding:6px 10px;font-size:12px;font-weight:800;white-space:nowrap;background:#1E2A35;color:#F1F3F2;border-right:2px solid var(--color-text)">{{ nDark }} dark</span>
         <span  style="padding:6px 10px;white-space:nowrap;background:{{ verdictBg }};color:{{ verdictFg }};font-size:12px;font-weight:900;letter-spacing:.1em">{{ verdict }}</span>
       </div>
+      <button type="button" data-nav-toggle="" aria-expanded="false" aria-controls="site-menu" style="display:none"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6h16M4 12h16M4 18h16"></path></svg><span data-nav-toggle-label="">Menu</span></button>
     </div>
   </header>
 

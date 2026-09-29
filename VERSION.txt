@@ -1,13 +1,18 @@
 Before You Book That Surgery — site release
-Version: 2026-09-29
+Version: 2026-09-29 (mobile pass)
 Domain: https://beforeyoubookthatsurgery.com
 
-Includes:
+Changes in this release:
+- Mobile pass (desktop >=1200px unchanged): collapsible header menu, fluid type,
+  13px text floor / 16px inputs, stacked signal log cards, single-column Signal Check
+  options (48px), Light Map counts strip, no sideways scroll at 320–390px.
+  Files: assets/mobile.css, assets/mobile.js (linked from all 5 pages)
 - Intelligence Library rewritten as 15 inline entries (In the dark / Ask / Check it)
 - Incision check tracker in Recovery (Clinician review: pending)
 - Brand line: "the patient's side of the table"
 - robots.txt, llms.txt, sitemap.xml, structured data
 
 Deploy:
-- Cloudflare Pages: upload the CONTENTS of this folder (index.html at root). Build command: none. Output dir: / 
+- Cloudflare Pages: upload the CONTENTS of this folder (index.html at root). Build command: none. Output dir: /
 - GitHub: push the contents of this folder as the repo root; connect repo in Cloudflare Pages.
+- After deploy: purge cache, test on a real phone, run Lighthouse mobile.
