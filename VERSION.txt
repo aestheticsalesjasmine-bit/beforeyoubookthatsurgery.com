@@ -1,0 +1,13 @@
+Before You Book That Surgery — site release
+Version: 2026-09-29
+Domain: https://beforeyoubookthatsurgery.com
+
+Includes:
+- Intelligence Library rewritten as 15 inline entries (In the dark / Ask / Check it)
+- Incision check tracker in Recovery (Clinician review: pending)
+- Brand line: "the patient's side of the table"
+- robots.txt, llms.txt, sitemap.xml, structured data
+
+Deploy:
+- Cloudflare Pages: upload the CONTENTS of this folder (index.html at root). Build command: none. Output dir: / 
+- GitHub: push the contents of this folder as the repo root; connect repo in Cloudflare Pages.

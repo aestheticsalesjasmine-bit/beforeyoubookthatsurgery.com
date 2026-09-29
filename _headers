@@ -1,0 +1,6 @@
+/support.js
+  Cache-Control: public, max-age=86400
+/_ds/*
+  Cache-Control: public, max-age=86400
+/assets/*
+  Cache-Control: public, max-age=2592000

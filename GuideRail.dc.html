@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>body{padding-bottom:132px}[data-m-show]{display:none}@media (max-width:680px){body{padding-bottom:84px}[data-rail]{grid-auto-columns:minmax(104px,1fr)!important}[data-m-hide]{display:none!important}[data-m-show]{display:inline!important}[data-m-row]{flex-wrap:nowrap!important;width:100%}[data-m-grow]{flex:1 1 auto!important;justify-content:center!important}}</style>
+  <style>html{-webkit-text-size-adjust:100%;text-size-adjust:100%}@media (max-width:680px){html,body{max-width:100%;overflow-x:hidden}img,video,canvas{max-width:100%;height:auto}input,select,textarea{font-size:16px!important}[style*="font-size: 9px"],[style*="font-size: 10px"],[style*="font-size: 11px"]{font-size:12px!important}[style*="font-size: 12px"],[style*="font-size: 13px"]{font-size:14px!important}[style*="font-size: 14px"]{font-size:15px!important}[style*="font-size: 15px"]{font-size:16px!important}[data-m="five"]{grid-template-columns:repeat(5,minmax(0,1fr))!important}[data-m-nomin]{min-width:0!important}}</style>
+</helmet>
+<nav aria-label="Your route" data-noprint="" style="background:#F1F3F2;border-bottom:2px solid #0C1620;font-family:'Archivo',sans-serif;color:#0C1620">
+  <ol data-rail="" style="list-style:none;margin:0 auto;padding:0;max-width:1440px;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(84px,1fr);overflow-x:auto;scrollbar-width:thin">
+    <sc-for list="{{ steps }}" as="s" hint-placeholder-count="10">
+      <li style="border-right:2px solid #0C1620;min-width:0;opacity:{{ s.op }};transform:{{ s.tf }};transition:opacity .4s ease {{ s.delay }},transform .4s ease {{ s.delay }}">
+        <a href="{{ s.href }}" target="{{ s.target }}" aria-current="{{ s.aria }}" style="display:grid;gap:3px;padding:9px 8px 10px;text-decoration:none;background:{{ s.bg }};color:{{ s.fg }};min-height:56px;height:100%;box-sizing:border-box;transition:background .3s" style-hover="background:#E4E8EA;color:#0C1620">
+          <span data-m-hide="" style="font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.75">{{ s.stage }} · {{ s.n }}</span>
+          <span style="font-size:13px;font-weight:800;line-height:1.15;letter-spacing:-.01em">{{ s.l }}</span>
+          <span data-m-hide="" style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:{{ s.stColor }}">{{ s.st }}</span>
+          <span style="display:block;height:3px;background:#D3D8DC;margin-top:2px"><span style="display:block;height:3px;width:{{ s.pct }};background:{{ s.bar }};transition:width .7s cubic-bezier(.2,.8,.2,1)"></span></span>
+        </a>
+      </li>
+    </sc-for>
+  </ol>
+</nav>
+<div data-noprint="" role="region" aria-label="Next step" style="position:fixed;left:0;right:0;bottom:0;z-index:55;background:#0C1620;color:#F1F3F2;font-family:'Archivo',sans-serif">
+  <div style="max-width:1440px;margin:0 auto;padding:8px clamp(12px,3vw,40px);display:flex;gap:8px 12px;align-items:center;flex-wrap:wrap;min-height:56px">
+    <div data-m-hide="" style="display:grid;gap:2px;flex:1 1 200px;min-width:0">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#A9B4BD">{{ curStage }} · Step {{ curN }} of {{ total }} · {{ curSt }}</span>
+      <span style="font-size:15px;font-weight:800;line-height:1.2">{{ curL }}</span>
+    </div>
+    <div data-m-row="" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+      <button onClick="{{ save }}" style="border:2px solid #D3D8DC;background:#D3D8DC;color:#0C1620;padding:10px 12px;font-family:inherit;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;min-height:44px;cursor:pointer;text-align:left;border-radius:0" style-hover="background:#FFFFFF;border-color:#FFFFFF">↓ <span data-m-hide="">{{ saveL }}</span><span data-m-show="">Save</span></button>
+      <button onClick="{{ send }}" style="border:2px solid #F1F3F2;background:#0C1620;color:#F1F3F2;padding:10px 12px;font-family:inherit;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;min-height:44px;cursor:pointer;text-align:left;border-radius:0" style-hover="background:#1E2A35">↗ <span data-m-hide="">Send to companion</span><span data-m-show="">Send</span></button>
+      <span aria-hidden="true" data-m-hide="" style="width:2px;align-self:stretch;background:#3E4A54;margin:0 4px"></span>
+      <sc-if value="{{ hasPrev }}" hint-placeholder-val="{{ true }}">
+        <a href="{{ prevHref }}" aria-label="Previous step" style="font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#C5CED5;text-decoration:none;padding:12px 6px" style-hover="color:#FFFFFF">←</a>
+      </sc-if>
+      <a href="{{ nextHref }}" target="{{ nextTarget }}" data-m-grow="" style="display:flex;gap:10px;align-items:center;background:#FFFFFF;color:#0C1620;text-decoration:none;padding:12px 20px;font-size:14px;font-weight:900;letter-spacing:.04em;text-transform:uppercase;min-height:48px;box-sizing:border-box;border:2px solid #FFFFFF" style-hover="background:#E4E8EA"><span data-m-hide="">{{ nextL }}</span><span data-m-show="">Next</span> →</a>
+    </div>
+  </div>
+</div>
+<sc-if value="{{ exitOpen }}" hint-placeholder-val="{{ false }}">
+  <div data-noprint="" role="dialog" aria-modal="true" aria-label="Before you go" style="position:fixed;inset:0;z-index:80;background:rgba(12,22,32,.55);display:grid;place-items:center;padding:16px">
+    <div style="background:#F1F3F2;color:#0C1620;border:2px solid #0C1620;max-width:520px;width:100%;display:grid;font-family:'Archivo',sans-serif">
+      <div style="padding:22px 24px;display:grid;gap:10px;border-bottom:2px solid #0C1620">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#57646E">Before you go</span>
+        <span style="font-size:26px;font-weight:800;letter-spacing:-.02em;line-height:1.1">Your plan only lives on this device.</span>
+        <span style="font-size:15px;line-height:1.5;color:#3E4A54;text-wrap:pretty">Take a copy with you, or send it to the person coming with you. You can pick up exactly where you left off.</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
+        <button onClick="{{ save }}" style="border:0;border-right:2px solid #0C1620;background:#0C1620;color:#F1F3F2;padding:16px 18px;font-family:inherit;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;text-align:left;cursor:pointer;min-height:56px;border-radius:0">Save my plan</button>
+        <button onClick="{{ send }}" style="border:0;border-right:2px solid #0C1620;background:transparent;color:#0C1620;padding:16px 18px;font-family:inherit;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;text-align:left;cursor:pointer;min-height:56px;border-radius:0" style-hover="background:#E4E8EA">Send to companion</button>
+        <button onClick="{{ closeExit }}" style="border:0;background:transparent;color:#57646E;padding:16px 18px;font-family:inherit;font-size:13px;font-weight:700;text-align:left;cursor:pointer;min-height:56px;border-radius:0" style-hover="background:#E4E8EA">Keep going</button>
+      </div>
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:200},&quot;current&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;how&quot;,&quot;map&quot;,&quot;path&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+const HOME = "index.html", HOW = "how-to-use.html", MAP = "light-map.html", PATH = "path.html", CALL = "https://cal.com/justaskjasmine-bybts/permission";
+const STEPS = [
+  { k: "home", g: "Research", l: "Start", href: HOME },
+  { k: "how", g: "Research", l: "How it works", href: HOW },
+  { k: "map", g: "Research", l: "The Light Map", href: MAP },
+  { k: "why", g: "Consult", l: "Your why", href: PATH + "#why" },
+  { k: "deposit", g: "Consult", l: "Before the deposit", href: PATH + "#deposit" },
+  { k: "decide", g: "Decide", l: "Permission to decide", href: PATH + "#decide" },
+  { k: "surgery", g: "Pre-op", l: "Booked to surgery day", href: PATH + "#surgery" },
+  { k: "recovery", g: "Post-op", l: "Recovery", href: PATH + "#recovery" },
+  { k: "cleared", g: "Post-op", l: "Cleared", href: PATH + "#cleared" },
+  { k: "call", g: "Support", l: "Permission Call", href: CALL, ext: true }
+];
+const PHASE_KEYS = ["why", "deposit", "surgery", "recovery", "cleared"];
+const BY_KEYS = ["bybts-lightmap-v2", "bybts-lightmap-summary", "bybts-journey-v2", "bybts-helped", "bybts-shared-at", "bybts-path-progress", "bybts-visited-home", "bybts-visited-how", "bybts-companion-text"];
+const PM = { ADVANCE: { bg: "#E6F3F1", fg: "#0F6158", bar: "#127A6F", t: "✓ Advance" }, HOLD: { bg: "#FBF1DF", fg: "#8A5A10", bar: "#D99A2B", t: "● Hold" }, HALT: { bg: "#FBE7E3", fg: "#C8321A", bar: "#C8321A", t: "■ Halt" } };
+const read = k => { try { return JSON.parse(localStorage.getItem(k) || "null"); } catch (e) { return null; } };
+class Component extends DCLogic {
+  state = { tick: 0, hash: "", shown: false, exit: false, saved: false };
+  componentDidMount() {
+    const c = this.props.current;
+    if (c === "home" || c === "how") { try { localStorage.setItem("bybts-visited-" + c, "1"); } catch (e) {} }
+    this._iv = setInterval(() => this.setState(s => ({ tick: s.tick + 1, hash: location.hash })), 1200);
+    this._hc = () => this.setState({ hash: location.hash }); window.addEventListener("hashchange", this._hc);
+    this._mo = e => { if (e.clientY > 0 || e.relatedTarget) return; let seen = false; try { seen = sessionStorage.getItem("bybts-exit") === "1"; } catch (x) {} if (seen || !this._hasProgress) return; try { sessionStorage.setItem("bybts-exit", "1"); } catch (x) {} this.setState({ exit: true }); };
+    document.addEventListener("mouseout", this._mo);
+    this.setState({ hash: location.hash }); setTimeout(() => this.setState({ shown: true }), 30);
+  }
+  componentDidUpdate() { const ol = document.querySelector("ol[data-rail]"); const cur = ol && ol.querySelector("[aria-current=step]"); if (!ol || !cur || ol.scrollWidth <= ol.clientWidth) return; const li = cur.parentElement; if (this._lastCur !== li && !this._userScrolled) { ol.scrollLeft = li.offsetLeft - ol.clientWidth / 2 + li.offsetWidth / 2; this._lastCur = li; } if (!this._bound) { this._bound = true; ol.addEventListener("scroll", () => { this._userScrolled = true; clearTimeout(this._us); this._us = setTimeout(() => { this._userScrolled = false; }, 4000); }, { passive: true }); } }
+  componentWillUnmount() { clearInterval(this._iv); window.removeEventListener("hashchange", this._hc); document.removeEventListener("mouseout", this._mo); }
+  renderVals() {
+    const lm = read("bybts-lightmap-summary") || {}, pp = read("bybts-path-progress") || {};
+    const seen = k => { try { return localStorage.getItem("bybts-visited-" + k) === "1"; } catch (e) { return false; } };
+    const frac = (d, t) => t ? Math.min(1, d / t) : 0;
+    const stat = k => {
+      if (k === "home" || k === "how") return seen(k) ? { s: "done", t: "✓ Done" } : { s: "todo", t: "○ Not started" };
+      if (k === "map") return lm.decision ? { s: "done", t: "✓ Done", p: 1 } : (lm.verdict && lm.answered === undefined) ? { s: "doing", t: "● Reading: " + lm.verdict, p: .5 } : lm.answered ? { s: "doing", t: "● " + lm.answered + " of " + lm.total, p: frac(lm.answered, lm.total) } : { s: "todo", t: "○ Not started" };
+      if (k === "call") return { s: "open", t: "When ready" };
+      const x = pp[k]; if (!x) return { s: "todo", t: "○ Not started" };
+      if (k === "decide") return x.permit ? { s: "done", t: (PM[x.permit] || {}).t || "✓ Done", p: 1, pm: PM[x.permit] } : x.have ? { s: "doing", t: "● " + x.have + " of " + x.total + " in hand", p: frac(x.have, x.total) } : { s: "todo", t: "○ Not started" };
+      if (k === "recovery") return x.done ? { s: "done", t: "✓ Done", p: 1 } : x.started ? { s: "doing", t: "● Day " + x.day, p: .5 } : { s: "todo", t: "○ Not started" };
+      return x.total && x.done >= x.total ? { s: "done", t: "✓ Done", p: 1 } : x.done ? { s: "doing", t: "● " + x.done + " of " + x.total, p: frac(x.done, x.total) } : { s: "todo", t: "○ Not started" };
+    };
+    const all = STEPS.map(s => stat(s.k));
+    this._hasProgress = all.some(x => x.s === "doing" || (x.s === "done" && x.p));
+    let cur = this.props.current || "home";
+    if (cur === "path") { const h = (this.state.hash || "").slice(1); const ph = this.props.phase; cur = h === "decide" ? "decide" : (typeof ph === "number" ? PHASE_KEYS[ph] : PHASE_KEYS.includes(h) ? h : PHASE_KEYS[pp.phase || 0]) || "why"; }
+    const ci = Math.max(0, STEPS.findIndex(s => s.k === cur));
+    const sh = this.state.shown;
+    const steps = STEPS.map((s, i) => { const st = all[i]; const on = i === ci;
+      return { n: String(i + 1).padStart(2, "0"), stage: s.g, l: s.l, href: s.href, target: s.ext ? "_blank" : "_self", aria: on ? "step" : "false", st: st.t,
+        bg: on ? "#0C1620" : st.pm ? st.pm.bg : st.s === "done" ? "#E4E8EA" : st.s === "doing" ? "#FBF1DF" : "transparent", fg: on ? "#F1F3F2" : st.pm ? "#0C1620" : st.s === "done" ? "#57646E" : "#0C1620",
+        stColor: st.pm && !on ? st.pm.fg : st.s === "done" ? (on ? "#9ED3CA" : "#57646E") : st.s === "doing" ? (on ? "#F1C77A" : "#8A5A10") : on ? "#A9B4BD" : "#57646E",
+        pct: sh ? Math.round((st.p != null ? st.p : st.s === "done" ? 1 : 0) * 100) + "%" : "0%", bar: st.pm ? st.pm.bar : st.s === "done" ? "#96A4B0" : "#D99A2B",
+        op: sh ? 1 : 0, tf: sh ? "none" : "translateY(6px)", delay: (i * 40) + "ms" }; });
+    const nx = STEPS[Math.min(ci + 1, STEPS.length - 1)], pv = STEPS[ci - 1];
+    const doSave = () => { const d = { app: "beforeyoubookthatsurgery.com", v: 1, saved: new Date().toISOString(), data: {} }; BY_KEYS.forEach(k => { try { const v = localStorage.getItem(k); if (v != null) d.data[k] = v; } catch (e) {} }); const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([JSON.stringify(d, null, 2)], { type: "application/json" })); a.download = "my-bybts-plan-" + new Date().toISOString().slice(0, 10) + ".json"; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500); this.setState({ saved: true, exit: false }); setTimeout(() => this.setState({ saved: false }), 2400); };
+    const doSend = () => { let t = null; try { t = localStorage.getItem("bybts-companion-text"); } catch (e) {} const text = t || "I'm working through a surgery decision with beforeyoubookthatsurgery.com, and I'd like you beside me. The companion route shows what to do before, on the day, and after: https://beforeyoubookthatsurgery.com/how-to-use#companion"; if (navigator.share) navigator.share({ title: "My surgery plan", text }).catch(() => {}); else location.href = "mailto:?subject=" + encodeURIComponent("My surgery plan, for you") + "&body=" + encodeURIComponent(text); this.setState({ exit: false }); };
+    return { steps, total: STEPS.length, curN: ci + 1, curL: STEPS[ci].l, curStage: STEPS[ci].g, curSt: all[ci].t,
+      nextHref: nx.href, nextTarget: nx.ext ? "_blank" : "_self", nextL: ci === STEPS.length - 1 ? "Request a Permission Call" : "Next: " + nx.l,
+      hasPrev: !!pv, prevHref: pv ? pv.href : HOME,
+      save: doSave, send: doSend, saveL: this.state.saved ? "✓ Saved" : "Save my plan",
+      exitOpen: this.state.exit, closeExit: () => this.setState({ exit: false }) };
+  }
+}
+</script>
+</body>
+</html>
