@@ -999,8 +999,8 @@ class Component extends DCLogic {
   scrollMain() { const el = document.getElementById("phase-main"); if (el && el.getBoundingClientRect().top < 0) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: "smooth" }); }
     _wound() {
     const S = this.state, TEAL = "#127A6F", AMB = "#D99A2B", RD = "#C8321A", INK = "#0C1620";
-    const WI = [["dress","Dressing: when and how to change it"],["shower","Showering: when, and whether the incision can get wet"],["drain","Drainage: what amount and colour to expect"],["close","Closures: glue, tape or stitches, and when they come off"],["garm","Garment: when it's on and when it's off"],["photo","Who gets your photo, and how fast they reply"]];
-    const OBS = [["red","Redness at the edges"],["swell","Swelling"],["dr","Drainage: amount and colour"],["edge","Edges: closed, or opening"],["warm","Warmth to the touch"],["pain","Pain compared with yesterday"],["smell","Smell"]];
+    const WI = [["dress","Dressing: when and how to change it"],["shower","Showering: when, and whether the incision can get wet"],["drain","Drainage: what amount and color to expect"],["close","Closures: glue, tape or stitches, and when they come off"],["garm","Garment: when it's on and when it's off"],["photo","Who gets your photo, and how fast they reply"]];
+    const OBS = [["red","Redness at the edges"],["swell","Swelling"],["dr","Drainage: amount and color"],["edge","Edges: closed, or opening"],["warm","Warmth to the touch"],["pain","Pain compared with yesterday"],["smell","Smell"]];
     const CALL = [["fev","Fever of 101°F (38.3°C) or higher, or chills"],["spread","Redness spreading, or red streaks"],["pus","Thick, cloudy, green or bad-smelling drainage"],["open","The incision is opening"],["side","Sudden swelling or firmness on one side"],["bleed","Bleeding that soaks through the dressing"],["calf","Pain, swelling or warmth in one calf"]];
     const ER = [["chest","Chest pain"],["breath","Trouble breathing"],["cough","Coughing up blood"],["faint","Fainting or confusion"]];
     const wi = S.wi || {}, wl = S.wl || {}, day = S.day, today = wl[day] || {}, flags = today._f || [];
