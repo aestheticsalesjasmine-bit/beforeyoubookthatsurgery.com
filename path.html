@@ -7,7 +7,7 @@
 <meta name="description" content="Your why, the questions to answer before a deposit, the full price and refund terms, surgery-day prep, recovery and when to call your surgeon. Private, saved only on your device.">
 <link rel="canonical" href="https://beforeyoubookthatsurgery.com/path">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta property="og:site_name" content="Before You Book That Surgery">
+<meta property="og:site_name" content="Before You Book That Surgery™">
 <meta property="og:type" content="website">
 <meta property="og:title" content="My Path: plan cosmetic surgery from consult to recovery | BYBTS">
 <meta property="og:description" content="Your why, the questions to answer before a deposit, the full price and refund terms, surgery-day prep, recovery and when to call your surgeon. Private, saved only on your device.">
@@ -18,7 +18,7 @@
 <meta name="twitter:title" content="My Path: plan cosmetic surgery from consult to recovery | BYBTS">
 <meta name="twitter:description" content="Your why, the questions to answer before a deposit, the full price and refund terms, surgery-day prep, recovery and when to call your surgeon. Private, saved only on your device.">
 <meta name="twitter:image" content="https://beforeyoubookthatsurgery.com/assets/web/practice-1-matched-sm.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://beforeyoubookthatsurgery.com/#org","name":"Before You Book That Surgery","alternateName":"BYBTS","url":"https://beforeyoubookthatsurgery.com/","slogan":"The patient's side of the table.","email":"justask@beforeyoubookthatsurgery.com","founder":{"@type":"Person","name":"Jasmine Louis Marrero","description":"20 years inside the aesthetics industry; now works independently for patients."},"sameAs":["https://bybts.com"]},{"@type":"WebSite","@id":"https://beforeyoubookthatsurgery.com/#site","url":"https://beforeyoubookthatsurgery.com/","name":"Before You Book That Surgery","publisher":{"@id":"https://beforeyoubookthatsurgery.com/#org"},"inLanguage":"en-US"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://beforeyoubookthatsurgery.com/#org","name":"Before You Book That Surgery™","alternateName":"BYBTS","url":"https://beforeyoubookthatsurgery.com/","slogan":"The patient's side of the table.","email":"justask@beforeyoubookthatsurgery.com","founder":{"@type":"Person","name":"Jasmine Louis Marrero","description":"20 years inside the aesthetics industry; now works independently for patients."},"sameAs":["https://bybts.com"]},{"@type":"WebSite","@id":"https://beforeyoubookthatsurgery.com/#site","url":"https://beforeyoubookthatsurgery.com/","name":"Before You Book That Surgery™","publisher":{"@id":"https://beforeyoubookthatsurgery.com/#org"},"inLanguage":"en-US"}]}</script>
 <link rel="preconnect" href="https://unpkg.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Privacy-friendly analytics by Plausible -->
@@ -92,7 +92,7 @@ input,textarea,select{font-size:16px!important}
   <header data-site-nav="" data-m-unstick="" style="position:sticky;top:0;z-index:10;background:var(--color-bg);border-bottom:2px solid var(--color-text)">
     <div  style="max-width:1440px;margin:0 auto;padding:0 clamp(16px,2.4vw,32px);display:flex;align-items:center;gap:20px;min-height:64px;flex-wrap:wrap">
       <div data-m-hide="" style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
-        <span  style="font-weight:900;font-size:17px;letter-spacing:-.02em">Before You Book That Surgery</span>
+        <span  style="font-weight:900;font-size:17px;letter-spacing:-.02em">Before You Book That Surgery™</span>
         <span  style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700)">Path Dashboard</span>
       </div>
       <div  style="display:flex;border:2px solid var(--color-text);margin-left:auto">
@@ -827,7 +827,7 @@ input,textarea,select{font-size:16px!important}
 
   <footer  style="border-top:2px solid var(--color-text);background:var(--color-text);color:var(--color-bg);margin-top:24px">
     <div  style="max-width:1440px;margin:0 auto;padding:22px clamp(16px,2.4vw,32px);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px">
-      <span  style="font-weight:800">Before You Book That Surgery · Patient intelligence before commitment</span>
+      <span  style="font-weight:800">Before You Book That Surgery™ · Patient intelligence before commitment</span>
       <span  style="color:#B3BCC3">A decision aid, not medical advice. In an emergency, call 911.</span>
     </div>
   </footer>
@@ -983,7 +983,7 @@ const KEY = "bybts-journey-v2";
 
 const BY_KEYS = ["bybts-lightmap-v2", "bybts-lightmap-summary", "bybts-journey-v2", "bybts-helped", "bybts-shared-at", "bybts-path-progress", "bybts-visited-home", "bybts-visited-how", "bybts-companion-text"];
 function byExport() { const d = { app: "beforeyoubookthatsurgery.com", v: 1, saved: new Date().toISOString(), data: {} }; BY_KEYS.forEach(k => { const v = localStorage.getItem(k); if (v != null) d.data[k] = v; }); const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([JSON.stringify(d, null, 2)], { type: "application/json" })); a.download = "my-bybts-file-" + new Date().toISOString().slice(0, 10) + ".json"; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500); }
-function byImport(e, fail) { const f = e.target.files && e.target.files[0]; if (!f) return; const r = new FileReader(); r.onload = () => { try { const d = JSON.parse(r.result); if (!d || d.app !== "beforeyoubookthatsurgery.com" || !d.data) throw 0; Object.entries(d.data).forEach(([k, v]) => { if (BY_KEYS.includes(k)) localStorage.setItem(k, v); }); location.reload(); } catch (x) { fail("That isn't a Before You Book That Surgery file"); } }; r.readAsText(f); e.target.value = ""; }
+function byImport(e, fail) { const f = e.target.files && e.target.files[0]; if (!f) return; const r = new FileReader(); r.onload = () => { try { const d = JSON.parse(r.result); if (!d || d.app !== "beforeyoubookthatsurgery.com" || !d.data) throw 0; Object.entries(d.data).forEach(([k, v]) => { if (BY_KEYS.includes(k)) localStorage.setItem(k, v); }); location.reload(); } catch (x) { fail("That isn't a Before You Book That Surgery™ file"); } }; r.readAsText(f); e.target.value = ""; }
 const QW = [[["The degree to which a person can grow is directly proportional to the amount of truth they can accept about themselves without running away.","Attributed to Leland Val Van de Wall · via @readswithravi"],["Tell me, what is it you plan to do with your one wild and precious life?","Mary Oliver, “The Summer Day”"]],[["Character — the willingness to accept responsibility for one’s own life — is the source from which self-respect springs.","Joan Didion, “On Self-Respect”"]],[["You only have to let the soft animal of your body love what it loves.","Mary Oliver, “Wild Geese”"],["You must do the thing you think you cannot do.","Eleanor Roosevelt"]],[["Caring for myself is not self-indulgence, it is self-preservation.","Audre Lorde, A Burst of Light"],["You may not control all the events that happen to you, but you can decide not to be reduced by them.","Maya Angelou"]],[["won’t you celebrate with me what i have shaped into a kind of life?","Lucille Clifton"],["Owning our story and loving ourselves through that process is the bravest thing we’ll ever do.","Brené Brown"]]];
 const QM = [[["The degree to which a person can grow is directly proportional to the amount of truth they can accept about themselves without running away.","Attributed to Leland Val Van de Wall · via @readswithravi"],["Not everything that is faced can be changed, but nothing can be changed until it is faced.","James Baldwin"]],[["The first principle is that you must not fool yourself — and you are the easiest person to fool.","Richard Feynman"]],[["The impediment to action advances action. What stands in the way becomes the way.","Marcus Aurelius, Meditations"],["The curious paradox is that when I accept myself just as I am, then I can change.","Carl R. Rogers"]],[["When we are no longer able to change a situation, we are challenged to change ourselves.","Viktor E. Frankl"]],[["Let everything happen to you: beauty and terror. Just keep going. No feeling is final.","Rainer Maria Rilke, Book of Hours"],["What a man can be, he must be.","Abraham Maslow"]]];
 const MALE_DEFAULT = ["gyno", "hdabs"];
