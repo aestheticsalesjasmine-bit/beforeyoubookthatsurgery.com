@@ -1,7 +1,7 @@
 # Before You Book That Surgery
 > The patient's side of the table. Free, private tools that help people considering cosmetic surgery see what can be checked, what still needs asking, and what they want, before any deposit. Paid for by patients, never by surgeons. US-focused.
 
-Founder: Jasmine Louis Marrero, 20 years inside the aesthetics industry, now working independently for patients. Contact: justask@beforeyoubookthatsurgery.com
+Founder: Jasmine Louis, 20 years inside the aesthetics industry, now working independently for patients. Contact: justask@beforeyoubookthatsurgery.com
 
 ## Tools
 - [The Light Map](https://beforeyoubookthatsurgery.com/light-map): check a surgeon and clinic across nine public-record areas (license, board certification, hospital privileges, facility accreditation, anesthesia, court records). Result: Advance, Hold or Halt, plus a one-page consult sheet.

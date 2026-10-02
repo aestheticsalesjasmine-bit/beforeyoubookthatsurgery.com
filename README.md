@@ -31,4 +31,4 @@ Patient answers stay in the visitor's own browser and are never sent to us. Anal
 ## Scope
 This site informs. Your surgeon treats. We don't diagnose, assess candidacy, or recommend procedures, surgeons or clinics, and we take no referral fees. In an emergency, call 911.
 
-© 2026 Jasmine Louis Marrero. Before You Book That Surgery™, The Light Map™ and The Permission Call™ are trademarks. All rights reserved.
+© 2026 Jasmine Louis. Before You Book That Surgery™, The Light Map™ and The Permission Call™ are trademarks. All rights reserved.
